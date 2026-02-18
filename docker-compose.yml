@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  hello-service:
+    image: hello-service-img
+    container_name: hello-service
+    ports:
+      - "4567:4567"
+    networks:
+      - hello-network
+
+  hello-service-invoker:
+    image: hello-service-invoker-img
+    container_name: hello-service-invoker
+    ports:
+      - "4568:4568"
+    environment:
+      - HELLO_SERVICE_URL=http://hello-service:4567
+    depends_on:
+      - hello-service
+    networks:
+      - hello-network
+
+networks:
+  hello-network:
+    driver: bridge
