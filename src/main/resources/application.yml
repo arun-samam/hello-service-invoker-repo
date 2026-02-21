@@ -12,3 +12,8 @@ server:
 hello:
   service:
     url: ${HELLO_SERVICE_URL:http://localhost:4567}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
