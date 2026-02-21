@@ -7,7 +7,7 @@ spring:
     active: default
 
 server:
-  port: ${HELLO-SERVICE-INVOKER-PORT:4568}
+  port: ${HELLO_SERVICE_INVOKER_PORT:4568}
   address: 0.0.0.0
 hello:
   service:
