@@ -2,12 +2,12 @@ spring:
   application:
     name: hello-service-invoker
   config:
-    import: optional:configserver:http://config-server:${CONFIG_PORT:8888}
+    import: optional:configserver:http://config-server:8888
   profiles:
     active: default
 
 server:
-  port: ${HELLO_SERVICE_INVOKER_PORT:4568}
+  port: 4568
   address: 0.0.0.0
 hello:
   service:
